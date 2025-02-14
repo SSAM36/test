@@ -1,0 +1,32 @@
+<html >
+<body>
+
+    <h2>Window Actions Demo</h2>
+    <form>
+        <button type="button" onclick="childwin('open')">Open New Window</button>
+        <button type="button" onclick="childwin('whole')">Change Whole Content of Window</button>
+        <button type="button" onclick="childwin('part')">Change Particular Content of Window</button>
+        <button type="button" onclick="childwin('close')">Close Window</button>
+    </form>
+
+    <script>
+        let nw;
+
+        function childwin(action) {
+            if (action === 'open') {
+                nw = window.open('', '', 'width=400,height=300');
+                nw.document.write('<h2>New Window Opened</h2>');
+            } else if (action === 'whole') {
+                nw.document.body.innerHTML = '<p>Entire content changed!</p>';
+            } else if (action === 'part') {
+                nw.document.body.innerHTML += '<p>Added some new content!</p>';
+            } else if (action === 'close') {
+                nw.close();
+            } else {
+                alert('No window is open to ');
+            }
+        }
+    </script>
+
+</body>
+</html>

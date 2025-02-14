@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Key Event Demo</title>
+
+</head>
+<body>
+<div id="OP"></div>
+    <script>
+        function logEvent(eventType, key, keyCode) {
+            const output = document.getElementById('OP');
+            const message = document.createElement('p');
+            message.textContent = `${eventType} event triggered - Key: ${key} (Code: ${keyCode})`;
+            output.appendChild(message);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            logEvent('keydown', event.key, event.keyCode);
+        });
+
+        document.addEventListener('keyup', function(event) {
+            logEvent('keyup', event.key, event.keyCode);
+        });
+
+        document.addEventListener('keypress', function(event) {
+            logEvent('keypress', event.key, event.keyCode);
+        });
+    </script>
+</body>
+</html>

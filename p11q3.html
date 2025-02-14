@@ -1,0 +1,17 @@
+<html>
+<body>
+
+    <button onclick="openWindows()">Open 3 Windows</button>
+
+    <script>
+        function openWindows() {
+            let win1 = window.open('', '', 'width=400,height=300');
+            win1.document.write('<h1>Welcome to the First Window</h1>');
+
+            let win2 = window.open('', '', 'width=400,height=300');
+            let win3 = window.open('', '', 'width=400,height=300');
+        }
+    </script>
+
+</body>
+</html>

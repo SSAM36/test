@@ -1,0 +1,35 @@
+<html>
+<body>
+    <style>
+        body {
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 33%;
+            background-color: #f9f9f9;
+        }
+    </style>
+    
+    <h1>Array Combination and Display</h1>
+    <div id="OA" class="result"></div>
+    <div id="CA" class="result"></div>
+    <div id="DA" class="result"></div>
+
+    <script>
+        let a1 = [1, 2, 3];
+        let a2 = [4, 5, 6];
+        let a3 = [7, 8, 9];
+
+        document.getElementById('OA').innerHTML = `<b> Original Array:</b> <br>Array 1 : [${a1}]  <br>Array 2 : [${a2}] <br> Array 3 : [${a3}]`;
+
+        let CA = a1.concat(a2, a3);
+        
+        document.getElementById('CA').innerHTML = `<b> Combined Array:</b> <br>[${CA.join(", ")}]`;
+
+        document.getElementById('DA').innerHTML = `<b> Hyphen Array:</b> <br>[${CA.join(" - ")}]`;
+    </script>
+</body>
+</html>

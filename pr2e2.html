@@ -1,0 +1,76 @@
+
+<html lang="en">
+<head>
+   
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meeting Schedule</h1>
+    <label >Select a day:</label>
+    <select id="day" onchange="showSchedule()">
+        <option value="">--Select Day--</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+    </select>
+    
+    <div id="schedule"></div>
+    
+    <script>
+        const schedules = {
+            Monday: [
+                { time: '10:00 AM', meeting: 'Team Meeting' },
+                { time: '1:00 PM', meeting: 'Client Call' }
+            ],
+            Tuesday: [
+                { time: '11:00 AM', meeting: 'Project Update' },
+                { time: '3:00 PM', meeting: 'Design Review' }
+            ],
+            Wednesday: [
+                { time: '9:00 AM', meeting: 'Standup Meeting' },
+                { time: '4:00 PM', meeting: 'Brainstorming Session' }
+            ],
+            Thursday: [
+                { time: '10:30 AM', meeting: 'Sprint Planning' },
+                { time: '2:00 PM', meeting: 'Team Building Activity' }
+            ],
+            Friday: [
+                { time: '12:00 PM', meeting: 'Weekly Review' },
+                { time: '5:00 PM', meeting: 'Wrap-up' }
+            ]
+        };
+
+        function showSchedule() {
+            const day = document.getElementById('day').value;
+            let scheduleHTML = '<table><tr><th>Time</th><th>Meeting</th></tr>';
+            
+            if (schedules[day]) {
+                schedules[day].forEach(({ time, meeting }) => {
+                    scheduleHTML += `<tr><td>${time}</td><td>${meeting}</td></tr>`;
+                });
+            } else {
+                scheduleHTML += '<tr><td colspan="2">No meetings scheduled</td></tr>';
+            }
+            
+            scheduleHTML += '</table>';
+            document.getElementById('schedule').innerHTML = scheduleHTML;
+        }
+    </script>
+</body>
+</html>

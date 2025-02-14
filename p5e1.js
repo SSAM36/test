@@ -1,0 +1,27 @@
+let s = "I like JavaScript programming";
+console.log("Given String : ",s);
+let c3 = s.charAt(2); 
+let c15 = s.charAt(14);
+let c8 = s.charAt(7);
+
+console.log("Character at position 3:", c3);
+console.log("Character at position 15:", c15);
+console.log("Character at position 8:", c8);
+
+let pJ = s.indexOf('J');
+let pP = s.indexOf('p');
+let pA = s.indexOf('a');
+let pT = s.indexOf('t');
+
+console.log("Position of 'J':", pJ);
+console.log("Position of 'p':", pP);
+console.log("Position of 'a':", pA);
+console.log("Position of 't':", pT);
+
+let searchLike = s.includes('like');
+
+if(s.includes('like')){
+    console.log("'like' word does exist in given string .");
+}else{
+    console.log("'like' word don't exist in given string .");
+}

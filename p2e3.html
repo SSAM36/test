@@ -1,0 +1,25 @@
+<html>
+<body>
+    <h1>Display Object Properties</h1>
+    <button onclick="displayProperties()">Display Properties</button>
+    
+    <div id="prop"></div>
+    
+    <script>
+        var person = {
+            name: 'Sam',
+            age: 18,
+            occupation: 'student',
+            city: 'badlapur'
+        };
+
+        function displayProperties() {
+            let ph = '';
+            for (let key in person) {
+                ph += `${key}: ${person[key]}<br>`;
+            }
+            document.getElementById('prop').innerHTML = ph;
+        }
+    </script>
+</body>
+</html>

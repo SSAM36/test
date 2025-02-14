@@ -1,0 +1,55 @@
+<html>
+   
+</head>
+<body>
+    <h2>Student Cookie Form</h2>
+    <form>
+        <label>Name:</label>
+        <input type="text" id="name"><br><br>
+        <label>Roll Number:</label>
+        <input type="text" id="rollnumber"><br><br>
+        <button type="button" onclick="createCookie()">Create Cookie</button>
+        <button type="button" onclick="readCookie()">Read Cookie</button>
+        <button type="button" onclick="deleteCookie()">Delete Cookie</button>
+        <button type="button" onclick="setExpiryDate()">Set Expiry Date</button>
+    </form>
+     <script>
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = `; expires=${date.toUTCString()}`;
+            }
+            document.cookie = `${name}=${value}${expires}; path=/`;
+        }
+
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
+            return match ? match[2] : null;
+        }
+
+        function createCookie() {
+            setCookie('name', document.getElementById('name').value);
+            setCookie('rollnumber', document.getElementById('rollnumber').value);
+            alert("Cookies created!");
+        }
+
+        function readCookie() {
+            alert(`Name: ${getCookie('name')}\nRoll Number: ${getCookie('rollnumber')}`);
+        }
+
+        function deleteCookie() {
+            setCookie('name', '', -1);
+            setCookie('rollnumber', '', -1);
+            alert("Cookies deleted!");
+        }
+
+        function setExpiryDate() {
+            setCookie('name', getCookie('name'), 30);
+            setCookie('rollnumber', getCookie('rollnumber'), 30);
+            alert("Expiry date set for cookies!");
+        }
+    </script>
+</body>
+</html>

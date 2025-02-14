@@ -1,0 +1,24 @@
+<html>
+<body>
+    <h1>JavaScript Regex Demo</h1>
+    <div id="output"></div>
+    <script>
+        const str = "Java and javascript are programming languages. But java is different than javascript.";
+        const pattern = /java/;
+
+        const execResult = pattern.exec(str),
+              matchResult = str.match(pattern),
+              testResult = pattern.test(str),
+              replaceResult = str.replace(pattern, 'Python'),
+              searchResult = str.search(pattern);
+
+        document.getElementById('output').innerHTML = `
+            original string : ${str}<br>
+            exec(): ${execResult} <br>
+            match(): ${matchResult} <br>
+            test(): ${testResult} <br>
+            replace(): ${replaceResult} <br>
+            search(): ${searchResult}`;
+    </script>
+</body>
+</html>

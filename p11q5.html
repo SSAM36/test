@@ -1,0 +1,23 @@
+<html>
+<body>
+
+    <button onclick="showLocation()">Show Location</button>
+    <button onclick="navigateHistory()">Navigate History</button>
+    <button onclick="openBlankPage()">Open Blank Page</button>
+
+    <script>
+        function showLocation() {
+            alert(`Current URL: ${window.location.href}`);
+        }
+
+        function navigateHistory() {
+            window.history.forward();
+        }
+
+        function openBlankPage() {
+            window.location.href = 'blank.html';
+        }
+    </script>
+
+</body>
+</html>

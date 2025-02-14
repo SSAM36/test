@@ -1,0 +1,38 @@
+<html>
+<body>
+    <style>
+        body {
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+
+    <h1>Array Elements with Index </h1>
+    <div id="AD" class="result"></div>
+
+    <script>
+  
+        var sub = {
+            CSS: 22519,
+            AJP: 22517,
+            OSY: 22516,
+            STE: 22518,
+            EST: 22447
+        };
+
+            let DT = "";
+            DT += `CSS: ${sub.CSS}<br>`;
+            DT += `AJP: ${sub.AJP}<br>`;
+            DT +=`OSY: ${sub.OSY}<br>`;
+            DT += `STE: ${sub.STE}<br>`;
+            DT += `EST: ${sub.EST}<br>`;
+
+        document.getElementById('AD').innerHTML =DT;
+    </script>
+</body>
+</html>

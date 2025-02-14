@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Dropdown Menu</title>
+    <script>
+        function updateSubjects() {
+            const year = document.getElementById('year').value;
+            const subjects = {
+                SYCO: ['DSU', 'OOP', 'DTE', 'CGR', 'DMS'],
+                TYCO: ['OSY', 'CSS', 'AJP', 'STE', 'EST']
+            };
+
+            const subjectSelect = document.getElementById('subject');
+            subjectSelect.innerHTML = '<option value="">--Select--</option>';
+
+            (subjects[year] || []).forEach(subject => {
+                subjectSelect.add(new Option(subject, subject));
+            });
+        }
+
+        function submitForm() {
+            const year = document.getElementById('year').value;
+            const subject = document.getElementById('subject').value;
+            alert(`Selected Year: ${year}\nSelected Subject: ${subject}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Dynamic Dropdown Menu</h1>
+    <form>
+        <label>Select Year:</label>
+        <select id="year" onchange="updateSubjects()">
+            <option value="">--Select--</option>
+            <option value="SYCO">SYCO</option>
+            <option value="TYCO">TYCO</option>
+        </select><br><br>
+        
+        <label>Select Subject:</label>
+        <select id="subject">
+            <option value="">--Select--</option>
+        </select><br><br>
+        
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+</body>
+</html>

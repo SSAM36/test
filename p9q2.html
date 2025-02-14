@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Form with Disabled and Read-Only Elements</title>
+</head>
+<body>
+    <h2>Disable and Read-Only Elements</h2>
+    <form>
+        <input type="text" value="This Form is to demonstrate disable and read only elements" readonly>
+        <br><br>
+        Name:
+        <input type="text"><br><br>
+        Temporary Address:
+        <textarea id="temp_address"></textarea><br><br>
+        Permanent Address:
+        <textarea id="perm_address"></textarea><br><br>
+        Are both addresses same?
+        <input type="radio" id="yes"> YES
+        <input type="radio" id="no"> NO<br><br>
+    </form>
+    <script>
+        document.getElementById('yes').addEventListener('change', () => {
+            const tempAddress = document.getElementById('temp_address').value;
+            const permAddress = document.getElementById('perm_address');
+            if (document.getElementById('yes').checked) {
+                permAddress.value = tempAddress;
+                permAddress.disabled = true;
+            }
+        });
+        document.getElementById('no').addEventListener('change', () => {
+            const permAddress = document.getElementById('perm_address');
+            if (document.getElementById('no').checked) {
+                permAddress.value = '';
+                permAddress.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
+

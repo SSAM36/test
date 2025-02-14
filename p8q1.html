@@ -1,0 +1,28 @@
+<html>
+<body>
+    <h1>Window Methods Demo</h1>
+    <button onclick="openWindow()">Open Pop-up Window</button>
+    <button onclick="closeWindow()">Close Pop-up Window</button>
+    <script>
+        let popupWindow;
+
+        window.onload = () => alert("Window has fully loaded!");
+        window.onunload = () => alert("Window is being unloaded!");
+
+        function openWindow() {
+            popupWindow = window.open("", "newWindow", "width=400,height=300");
+            popupWindow.document.write("<p>This is a new pop-up window!</p>");
+        }
+        function closeWindow() {
+            popupWindow?.close();
+        }
+
+        window.onresize = () => {
+            console.log(`Window resized to: ${window.innerWidth} x ${window.innerHeight}`);
+            alert("Window Resized");
+        };
+    </script>
+</body>
+</html>
+
+

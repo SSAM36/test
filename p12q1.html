@@ -1,0 +1,36 @@
+<html>
+<body>
+    <form id="myForm">
+        <input  placeholder="Name" id="name" required><br><br>
+        <input  placeholder="Employee ID" id="empId" required><br><br>
+        <input  placeholder="Email ID" id="email" required><br><br>
+        <input placeholder="Mobile Number" id="mobile" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('myForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const empId = document.getElementById('empId').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+
+            const empIdPattern = /^EMP\d{6}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const mobilePattern = /^\d{10}$/;
+
+            if (!name) {
+               alert(' enter a valid name.');
+             } else if (!empIdPattern.test(empId)) {
+               alert('Invalid EmployeeID format.');
+             } else if (!emailPattern.test(email)) {
+               alert('Invalid email format.');
+             } else if (!mobilePattern.test(mobile)) {
+               alert('Mobile number must be 10 digits.');
+             } else {
+               alert('Form submitted successfully!');
+             }
+        };
+    </script>
+</body>
+</html>

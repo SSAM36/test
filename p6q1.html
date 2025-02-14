@@ -1,0 +1,32 @@
+<html>
+<body>
+
+    <form onsubmit="register(event)" id="rf">
+        Name: <input type="text" required><br><br>
+        Employee-ID: <input type="text" required><br><br>
+        Email: <input type="email" required><br><br>
+        Password: <input type="password" id="pwd" required><br><br>
+        Confirm Password: <input type="password" id="cpwd" required><br><br>
+        <button type="submit">Register</button>
+    </form>
+    <p id="msg"></p>
+
+    <script>
+        function register(e) {
+            e.preventDefault();
+            let pass = document.getElementById("pwd").value;
+            let confirmPass = document.getElementById("cpwd").value;
+            
+
+            if (pass === confirmPass) {
+                document.getElementById("msg").innerText = "Registration is successful";
+                // document.getElementById("rf").reset();
+            } else {
+               
+                document.getElementById("msg").innerText = "Passwords don't match";
+            }
+        }
+    </script>
+
+</body>
+</html>

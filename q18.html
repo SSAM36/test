@@ -1,0 +1,23 @@
+<html>
+<body>
+  <div id="banner-ad">
+    <img src="c1.jpeg" id="banner-image" alt="Banner Ad">
+    <div> <a href="https://www.example.com" target="_blank">Click here for special offers</a> </div>
+  </div>
+
+  <script>
+    const bi = ['c1.jpeg', 'c2.jpeg', 'c3.jpeg'];
+    let ci = 0;
+
+    function cbi() {
+      ci = (ci + 1) % bi.length;
+      const bp = document.getElementById('banner-image');
+      setTimeout(() => {
+        bp.src = bi[ci];   
+      }, 500);
+    }
+
+    setInterval(cbi, 5000); 
+  </script>
+</body>
+</html>

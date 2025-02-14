@@ -1,0 +1,28 @@
+<html>
+<body>
+    <h2>Cookie Form</h2>
+    <form>
+        <label>Name:</label>
+        <input type="text" id="name"><br><br>
+        <label>Username:</label>
+        <input type="text" id="username"><br><br>
+        <button type="button" onclick="setSessionCookie()">Set Session Cookie</button>
+        <button type="button" onclick="setPersistentCookie()">Set Persistent Cookie</button>
+    </form>
+    <script>
+        function setSessionCookie() {
+            const name = document.getElementById('name').value;
+            document.cookie = `name=${name}; path=/`;
+            alert("Session cookie set for name!");
+        }
+
+        function setPersistentCookie() {
+            const username = document.getElementById('username').value;
+            const expires = new Date();
+            expires.setTime(expires.getTime() + (30*24*60*60*1000)); // 30 days
+            document.cookie = `username=${username}; expires=${expires.toUTCString()}; path=/`;
+            alert("Persistent cookie set for username!");
+        }
+    </script>
+</body>
+</html>

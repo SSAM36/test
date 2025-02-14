@@ -1,0 +1,39 @@
+<html>
+<body>
+    <style>
+        body {
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+    
+    <h1>Array Push-Pop Operation</h1>
+    <div id="OA" class="result"></div>
+    <div id="AEA" class="result"></div>
+    <div id="AFA" class="result"></div>
+    <div id="DEA" class="result"></div>
+    <div id="DFA" class="result"></div>
+
+    <script>
+        let a1 = [1, 2, 3, 4, 5];
+        document.getElementById('OA').innerHTML =` <b> Original Array:</b> <br>Array : [${a1}] `;
+        
+        a1.push(6);
+        document.getElementById('AEA').innerHTML = `<b> ADD Element in Array Using PUSH Method :</b> <br>Array : [${a1}]`;
+        
+        a1.unshift(0);
+        document.getElementById('AFA').innerHTML = `<b> ADD Element in Array Using UNSHIFT Method :</b> <br>Array : [${a1}]`;
+        
+        a1.pop();
+        document.getElementById('DEA').innerHTML =` <b> Remove Element in Array Using POP Method :</b> <br>Array : [${a1}]`;
+
+        a1.shift();        
+        document.getElementById('DFA').innerHTML =` <b> Remove Element in Array Using SHIFT Method :</b> <br>Array : [${a1}]`;
+    </script>
+</body>
+</html>

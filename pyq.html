@@ -1,0 +1,22 @@
+
+
+
+
+<html>
+    <head>
+        <title>Status Bar Example</title>
+        <script>
+            function setStatus() {
+                window.status = "This is the new status bar message!";
+            }
+
+            function getStatus() {
+                alert("Current status: " + window.status);
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="setStatus()">Set Status</button>
+        <button onclick="getStatus()">Get Status</button>
+    </body>
+</html>

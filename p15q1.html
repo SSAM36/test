@@ -1,0 +1,14 @@
+<html>
+<body>
+    <style>
+        #status-bar { position: fixed; bottom: 0; width: 100%; background: #eee; padding: 5px; }
+    </style>
+    <div id="status-bar">Status: </div>
+    <img src="c1.jpeg" onmouseover="updateStatus('Mouse over the image')" onmouseout="updateStatus('Hover over the image')">
+    <script>
+        function updateStatus(message) {
+            document.getElementById('status-bar').textContent = 'Status: ' + message;
+        }
+    </script>
+</body>
+</html>

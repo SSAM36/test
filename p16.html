@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="banner">
+        <img id="bannerImage" src="chip1.png" onclick="openLink()">
+    </div>
+    <div class="controls">
+        <button id="stopButton" onclick="stopSlideshow()">Stop Slideshow</button>
+        <button id="prevButton" onclick="prevImage()">Previous</button>
+        <button id="nextButton" onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        const images = [
+            { src: 'chip1.png', link: 'http://example.com/ad1' },
+            { src: 'chip2.png', link: 'http://example.com/ad2' },
+            { src: 'c1.jpeg', link: 'http://example.com/ad3' },
+            { src: 'c2.jpeg', link: 'http://example.com/ad4' },
+            { src: 'c3.jpeg', link: 'http://example.com/ad5' }
+        ];
+
+        let currentIndex = 0;
+        let intervalId;
+
+        const bannerImage = document.getElementById('bannerImage');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+
+        function startSlideshow() {
+            intervalId = setInterval(nextImage, 3000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(intervalId);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateBanner();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateBanner();
+        }
+
+        function updateBanner() {
+            bannerImage.src = images[currentIndex].src;
+            bannerImage.onload = () => console.log('Image loaded:', bannerImage.src);
+            bannerImage.onerror = () => bannerImage.src = '';
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === images.length - 1;
+        }
+
+        function openLink() {
+            window.open(images[currentIndex].link, '_blank');
+        }
+
+        startSlideshow();
+    </script>
+</body>
+</html>
+

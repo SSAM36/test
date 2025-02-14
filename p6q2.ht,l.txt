@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Evaluation</title>
+</head>
+<body>
+
+    <h2>EVENT EVALUATION</h2>
+    <p>THANKS FOR ATTENDING OUR EVENT! HOW DID WE DO?</p>
+
+    <form>
+        <!-- Name fields -->
+        <label for="first-name">Name: *</label><br>
+        <input type="text" id="first-name" placeholder="First Name" required>
+        <input type="text" id="last-name" placeholder="Last Name" required><br><br>
+
+        <!-- Participation dropdown -->
+        <label for="participation">How did you participate? *</label>
+        <select id="participation">
+            <option>Attendee</option>
+            <option>Speaker</option>
+            <option>Volunteer</option>
+        </select><br><br>
+
+        <!-- Rating section -->
+        <p>Please rate the following: *</p>
+        
+        <label>Event Usefulness</label><br>
+        <input type="radio" name="usefulness" value="1"> 1
+        <input type="radio" name="usefulness" value="2"> 2
+        <input type="radio" name="usefulness" value="3"> 3
+        <input type="radio" name="usefulness" value="4"> 4
+        <input type="radio" name="usefulness" value="5"> 5<br><br>
+
+        <label>Time Management</label><br>
+        <input type="radio" name="time-management" value="1"> 1
+        <input type="radio" name="time-management" value="2"> 2
+        <input type="radio" name="time-management" value="3"> 3
+        <input type="radio" name="time-management" value="4"> 4
+        <input type="radio" name="time-management" value="5"> 5<br><br>
+
+        <label>Refreshments</label><br>
+        <input type="radio" name="refreshments" value="1"> 1
+        <input type="radio" name="refreshments" value="2"> 2
+        <input type="radio" name="refreshments" value="3"> 3
+        <input type="radio" name="refreshments" value="4"> 4
+        <input type="radio" name="refreshments" value="5"> 5<br><br>
+
+        <!-- Will you join next year? -->
+        <p>Will you join us next year? *</p>
+        <input type="radio" name="join-next-year" value="yes"> Yes
+        <input type="radio" name="join-next-year" value="maybe"> Maybe
+        <input type="radio" name="join-next-year" value="no"> No<br><br>
+
+        <!-- Feedback textarea -->
+        <label for="feedback">What can we do better?</label><br>
+        <textarea id="feedback" rows="4" cols="50"></textarea><br><br>
+
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

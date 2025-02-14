@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h2>Form Event Demonstration</h2>
+    <form onsubmit="handleEvent('submit',event)" onreset="handleEvent('reset',event)" >
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" onfocus="handleEvent('focus' ,event)" 
+               onblur="handleEvent('blur',event)" oninput="handleEvent('input' ,event)" onselect="handleEvent('select',event)"  onchange="handleEvent('change',event)">
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+    <script>
+        function handleEvent(eventType, e) {
+            e.preventDefault();
+            console.log(`Event: ${eventType}`);
+        }
+    </script>
+
+</body>
+</html>

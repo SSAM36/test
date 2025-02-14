@@ -1,0 +1,27 @@
+<html>
+<head>
+ <title>Image Rollover Effect</title>
+</head>
+4
+<body>
+<!-- Define three images with unique IDs and set the initial image sources -->
+<img src="c1.jpeg" id="img1" width="200" height="150" onmouseover="rollover('img1',
+'chip1.png')" onmouseout="rollout('img1', 'c1.jpeg')">
+
+<img src="c2.jpeg" id="img2" width="200" height="150" onmouseover="rollover('img2',
+'chip2.png')" onmouseout="rollout('img2', 'c2.jpeg')">
+
+<img src="c3.jpeg" id="img3" width="200" height="150" onmouseover="rollover('img3',
+'chip1.png')" onmouseout="rollout('img3', 'c3.jpeg')">
+<script>
+ // Function to change the image on mouseover
+ function rollover(imageId, hoverSrc) {
+ document.getElementById(imageId).src = hoverSrc;
+ }
+ // Function to revert back to the original image on mouseout
+ function rollout(imageId, originalSrc) {
+ document.getElementById(imageId).src = originalSrc;
+ }
+</script>
+</body>
+</html>

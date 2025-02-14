@@ -1,0 +1,30 @@
+<html>
+<body>
+
+    <h2>Mouse Event Demo</h2>
+
+    <label>click me:</label>
+        <input type="text"   
+        onclick="showMessage('Click')" 
+        ondblclick="showMessage('Double Click')" 
+        onmousemove="showMessage('Mouse Move')"
+        onmouseout="showMessage('Mouse Out')"> 
+        <br><br>
+
+        <label>click me:</label>
+        <input type="text"   
+        onmousedown="showMessage('Mouse Down')"
+        onmouseup="showMessage('Mouse Up')" 
+        onmouseover="showMessage('Mouse Over')" > 
+        <br><br>
+    
+    <p id="output"></p>
+
+    <script>
+        function showMessage(message) {
+            document.getElementById('output').textContent = message;
+        }
+    </script>
+
+</body>
+</html>

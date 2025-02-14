@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS Calculator</title>
+    <style>
+        div{
+            padding: 10px;
+        }
+        .btn1{
+            /* width: 30px; */
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <input class="i1" id="num1" placeholder="Enter 1 num" required type="number">
+    <input class="i1" id="num2" placeholder="Enter 2 num" required type="number">
+</div>
+<div>
+    <button class="btn1" onclick="add()">Answer</button>
+</div>
+
+    <label class="lb"></label>
+    <script>
+        const l = document.querySelector(".lb");
+        let num1 ;
+        let num2 ;
+        function getdata()
+        {
+             num1=parseInt(document.querySelector("#num1").value);
+             num2=parseInt(document.querySelector("#num2").value);
+        }
+        function add()
+        {  
+            getdata();
+            
+            l.textContent = " division = " + (num1/num2) ;
+            l.innerHTML=" Addition =   " + (num1+num2) + "<br>"  +"Subtraction ="+ (num1-num2)+ "<br>"+"multiplication =  "+ (num1*num2)+ "<br>" + "division =  "+ (num1/num2);
+            if((num1-num2)<0){
+                alert("Result is negative .");
+            }
+            if(num2 == 0){
+                alert("Divisior cannot be zero .");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<body>
+<div>
+   <img id="bi" src="chip1.png" onclick="ol()">
+</div>
+
+<div>
+ <button id="prev" onclick="pi()">previous image </button>
+ <button id="star" onclick="stss()">stop image </button>
+ <button id="nex" onclick="ni()">next image </button>
+<div>
+<script>
+const bi = document.getElementById("bi");
+
+const img = 
+[
+ {src:'chip1.png',link:'https://www.google.com/'},
+ {src:'chip2.png',link:'https://www.google.com/'},
+ {src:'c1.jpeg',link:'https://www.google.com/'},
+ {src:'c2.jpeg',link:'https://www.google.com/'},
+ {src:'c3.jpeg',link:'https://www.google.com/'},
+];
+
+let ci = 0;
+let intr;
+
+function sss()
+{
+  intr = setInterval(ni,1000);
+}
+
+function ni()
+{
+ ci=(ci+1)%img.length;
+ub();
+}
+
+function pi()
+{
+ ci = (ci -1 + img.length ) % img.length;
+ ub();
+}
+function ub()
+{
+
+bi.src =img[ci].src;
+document.getElementById("prev").disabled = ci === 0 ;
+document.getElementById("nex").disabled = ci === img.length -1 ;
+}
+
+function stss()
+{
+  clearInterval(intr);
+}
+function ol()
+{
+  window.open(img[ci].link,"_blank");
+}
+sss();
+</script>
+</body>
+</html>

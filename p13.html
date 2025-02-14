@@ -1,0 +1,27 @@
+<html>
+<body>
+    <ul>
+        <li class="place" data-image="c1.jpeg" data-description="Description of Place 1">Place 1</li>
+        <li class="place" data-image="c2.jpeg" data-description="Description of Place 2">Place 2</li>
+        <li class="place" data-image="c3.jpeg" data-description="Description of Place 3">Place 3</li>
+    </ul>
+    <div id="info-box">
+        <img id="info-image" src="" alt="Place Image">
+        <p id="info-description"></p>
+    </div>
+
+    <script>
+        document.querySelectorAll('.place').forEach(place => {
+            place.addEventListener('mouseover', e => {
+                const { image, description } = e.target.dataset;
+                document.getElementById('info-image').src = image;
+                document.getElementById('info-description').textContent = description;
+                document.getElementById('info-box').style.display = 'block';
+            });
+            place.addEventListener('mouseout', () => {
+                document.getElementById('info-box').style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

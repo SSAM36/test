@@ -1,0 +1,22 @@
+<html>
+
+<body style="height: 2000px; width: 2000px; ">
+
+    <button onclick="sb(0, -100)">Up</button>
+    <button onclick="sb(0, 100)">Down</button>
+    <button onclick="sb(-100, 0)">Left</button>
+    <button onclick="sb(100, 0)">Right</button>
+    <button onclick="scrollToEnd()">Go to End</button>
+
+    <script>
+        function sb(x, y) {
+            window.scrollBy(x, y);
+        }
+
+        function scrollToEnd() {
+            window.scrollTo(document.body.scrollWidth, document.body.scrollHeight);
+        }
+    </script>
+
+</body>
+</html>

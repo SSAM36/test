@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div{
+            margin: 5px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        h1{
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Prime numbers from 1-20 using for loop</h1>
+        <label class="l1"></label>
+    </div>
+    <div>
+        <h1>Even numbers from 21-40 using do-while loop</h1>
+        <label class="l2"></label>
+    </div>
+    <div>
+        <h1>Odd numbers from 41-60 using while loop</h1>
+        <label class="l3"></label>
+    </div>
+
+    
+    <script>
+        const l1= document.querySelector(".l1");
+        const l2= document.querySelector(".l2");
+        const l3= document.querySelector(".l3");    
+        var i;
+        for(i=2;i<=20;i++){
+            var key=1;
+            for(var j=2;j<=(i/2);j++){
+                if(i%j==0){
+                    key=0;
+                }
+            }
+            if(key!=0){
+                l1.innerHTML += '<br>'+i ;
+            }
+        }
+
+
+        do {
+            if(i%2 == 0){
+                l2.innerHTML += '<br>'+i ;          
+            }
+            i++;
+        } while (i<=40);
+
+        while (i<=60) {
+            if(i%2 == 1){
+                l3.innerHTML += '<br>'+i
+            }
+            i++;
+        }
+    </script>
+</body>
+</html>
